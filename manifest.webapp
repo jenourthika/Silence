@@ -1,15 +1,21 @@
-{
-  "name": "Silence",
-  "description": "A Hello World app",
-  "launch_path": "/index.html",
-  "icons": {
-    "16": "/icons/icon16x16.png",
-    "48": "/icons/icon48x48.png",
-    "60": "/icons/icon60x60.png",
-    "128": "/icons/icon128x128.png"
-  },
-  "developer": {
-    "name": "Your name",
-    "url": "http://example.com"
+{ "name": "SMS Demo"
+, "description": "Test Sending and Receiving SMS"
+, "version": "1.0"
+, "type": "certified"
+, "launch_path": "/index.html"
+, "developer": {
+    "name": "AJ ONeal"
+  , "url": "http://coolaj86.com"
   }
+, "permissions": {
+    "sms": {
+      "description": "You can send and receive text messages in this app."
+    }
+  , "alarms": {
+      "description": "We'll periodically manually check for new messages since message API is buggy."
+    }
+  },
+  "messages": [
+    { "alarm": "/index.html" }
+  ]
 }
