@@ -25,18 +25,18 @@ $(function() {
     ev.stopPropagation();
 	
 	//var crypto = crypto.subtle;
-	var ptUtf8 = new TextEncoder().encode(plainText);
+	var message = $('[name=msg]').val();
 
-  var pwUtf8 = new TextEncoder().encode(password);
-  var pwHash = await crypto.subtle.digest('SHA-256', pwUtf8); 
+	var pwUtf8 = new TextEncoder().encode(message);
+	var pwHash = crypto.subtle.digest('SHA-256', pwUtf8); 
 
-  var iv = crypto.getRandomValues(new Uint8Array(12));
-  var alg = { name: 'AES-GCM', iv: iv };
-  var key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
+	var iv = crypto.getRandomValues(new Uint8Array(20));
+	var alg = { name: 'AES-GCM', iv: iv };
+	var key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
 
-  var cryptedMessage = crypto.subtle.encrypt(alg, key, ptUtf8);
+	var cryptedMessage = crypto.subtle.encrypt(alg, key, ptUtf8);
 
-    var msg = $('[name=msg]').val()
+    var msg = cryptedMessage
       , phone = $('[name=phone]').val()
       , request;
 
