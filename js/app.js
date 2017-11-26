@@ -32,9 +32,11 @@ $(function() {
 
 	var iv = crypto.getRandomValues(new Uint8Array(20));
 	var alg = { name: 'AES-GCM', iv: iv };
-	var key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
+	var key = crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
 
 	var cryptedMessage = crypto.subtle.encrypt(alg, key, ptUtf8);
+	
+	var decryptedMessage = crypto.subtle.decrypt(algorithm, key, data);
 
     var msg = cryptedMessage
       , phone = $('[name=phone]').val()
