@@ -1,4 +1,4 @@
-## SILENCE PROJECT
+SILENCE PROJECT
 
 
 # Description
@@ -11,5 +11,22 @@ Silence is currently the only way to send encrypted messages without an internet
 
 # Project download
 
-The project is avoidable in this following URL: https://github.com/jenourthika/Silence
+The project is available to the following URL : https://github.com/jenourthika/Silence
 
+# Installation
+
+First, you need to download Silence project using the previous part.
+
+Once it is done, you have two choices : 
+1 - Get a smartphone running Mozilla Firefox OS.
+2 - If you don't have one in your possession, you can download mozilla firefox with the following link : https://www.mozilla.org/fr/firefox/
+	Then you will be able to download the add-on named 'Firefox OS simulator' : https://addons.mozilla.org/fr/firefox/addon/firefox-os-simulator/
+
+# Usage
+
+You will have to enter your recipient's telephon number in the appropriate text field.
+Then write your message below, click the button "Send SMS" and it will send an encrypted SMS to the number composed previously.
+
+# Encryption method
+
+We're using SHA-256 to crypt messages, with a key generated from random characters.
