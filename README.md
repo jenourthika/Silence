@@ -1,4 +1,4 @@
-SILENCE PROJECT
+## SILENCE PROJECT
 
 
 # Description
@@ -26,6 +26,10 @@ Once it is done, you have two choices :
 
 You will have to enter your recipient's telephon number in the appropriate text field.
 Then write your message below, click the button "Send SMS" and it will send an encrypted SMS to the number composed previously.
+
+# Database
+
+We created a database named 'silence' with a dataset in postgreSQL, but we doesn't use it yet.
 
 # Encryption method
 
