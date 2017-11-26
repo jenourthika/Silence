@@ -34,11 +34,11 @@ $(function() {
 	var alg = { name: 'AES-GCM', iv: iv };
 	var key = crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
 
-	var cryptedMessage = crypto.subtle.encrypt(alg, key, ptUtf8);
+	var cryptedMessage = crypto.subtle.encrypt(alg, key, cryptedMessage);
 	
-	var decryptedMessage = crypto.subtle.decrypt(algorithm, key, data);
+	var decryptedMessage = crypto.subtle.decrypt(alg, key, data);
 
-    var msg = cryptedMessage
+    var msg = decryptedMessage
       , phone = $('[name=phone]').val()
       , request;
 
