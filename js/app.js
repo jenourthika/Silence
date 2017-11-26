@@ -24,7 +24,7 @@ $(function() {
     ev.preventDefault();
     ev.stopPropagation();
 	
-	//var crypto = crypto.subtle;
+	// Encryption
 	var message = $('[name=msg]').val();
 
 	var pwUtf8 = new TextEncoder().encode(message);
@@ -34,9 +34,11 @@ $(function() {
 	var alg = { name: 'AES-GCM', iv: iv };
 	var key = crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
 
-	var cryptedMessage = crypto.subtle.encrypt(alg, key, cryptedMessage);
+	var cryptedMessage = crypto.subtle.encrypt(alg, key, ptUtf8);
 	
-	var decryptedMessage = crypto.subtle.decrypt(alg, key, data);
+	
+	// decryption
+	var decryptedMessage = crypto.subtle.decrypt(alg, key, cryptedMessage);
 
     var msg = decryptedMessage
       , phone = $('[name=phone]').val()
