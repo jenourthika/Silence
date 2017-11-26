@@ -1,4 +1,3 @@
-/*global MozSmsFilter*/
 $(function() {
   'use strict';
 
@@ -11,6 +10,8 @@ $(function() {
   }
   */
   function logMsg(msg) {
+	  
+	// message display
     [
       'type', 'id', 'threadId', 'body', 'delivery', 'deliveryStatus', 'read'
     , 'receiver', 'sender', 'timestamp', 'messageClass'
@@ -37,7 +38,7 @@ $(function() {
 	var cryptedMessage = crypto.subtle.encrypt(alg, key, ptUtf8);
 	
 	
-	// decryption
+	// Decryption
 	var decryptedMessage = crypto.subtle.decrypt(alg, key, cryptedMessage);
 
     var msg = decryptedMessage
@@ -80,27 +81,12 @@ $(function() {
 
     cursor.onsuccess = function () {
       logMsg(this.result);
-      /*
-      var message = this.result
-        , time = message.timestamp.toDateString()
-        ;
-
-      console.log(time + ': ' + (message.body || message.subject)); // SMS || MMS
-      $("#response").append("<div>Got new message [" + time + "]"
-        + "<br>" + (message.body || message.subject)
-        + "</div>"
-      );
-
-      if (!this.done) {
-        this.continue();
-      }
-      */
     };
   }
 
   // 'received' seems to only activate after a message is sent
   navigator.mozMobileMessage.addEventListener('received', function (msg) {
-    // https://developer.mozilla.org/en-US/docs/Web/API/MozSmsMessage
+    
     $("#response").html("Got a message");
     $("#response").append("<br>" + msg);
     logMsg(msg);
