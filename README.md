@@ -30,6 +30,10 @@ Then write your message below, click the button "Send SMS" and it will send an e
 
 ## Technical documentation
 
+# Languages
+
+Silence is coded in HTML/CSS/Javascript with a small part of jQuery.
+
 # Database
 
 We created a database named 'silence' with a dataset in postgreSQL, but we doesn't use it yet.
