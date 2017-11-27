@@ -21,7 +21,7 @@ $(function() {
   }
 
   $('form#sms-form').on("submit", function (ev) {
-    $("#response").html("Votre message a bien été envoyé");
+    $("#response").html("Your message has been successfully delivered.");
     ev.preventDefault();
     ev.stopPropagation();
 	
