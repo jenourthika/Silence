@@ -99,7 +99,6 @@ $(function() {
     $("#alarms").append("<li>Alarm Fired: " + new Date().toString().replace(/GMT.*/, ''));
       //+ " : " + JSON.stringify(mozAlarm.data) + "</li>");
     showMessages();
-    //setAlarm(7 * 1000);
     setAlarm(7 * 60 * 1000);
   });
   
