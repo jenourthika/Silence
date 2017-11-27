@@ -135,6 +135,6 @@ $(function() {
   }
 
   if (!navigator.mozHasPendingMessage("alarm")) {
-    setAlarm(5 * 1000);
+    setAlarm(20 * 1000);
   }
 });
